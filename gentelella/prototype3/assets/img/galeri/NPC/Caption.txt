@@ -1,0 +1,17 @@
+NPC_Briefing
+Para finalis diberikan brifieng cara mengerjakan soal NPC 2015.
+
+NPC_Usama
+Suasana tegang teman-teman schematist saat mengikuti NPC 2015.
+
+NPC_Ngoding
+Duhh.. sampe pusing gitu kayanya buat mecahin soal-soal programming di NPC 2015.
+
+NPC_Countdown
+Countdown pengerjaan soal-soal programming di NPC 2015.
+
+NPC_Pemberian Hadiah
+Penerimaan hadiah untuk juara 1 NPC 2015 secara langsung diberikan oleh Ibu Dr. Eng. Nanik Suciati, S.Kom., M.Kom.
+
+NPC_Pemenang
+Inilah para sang Juara NPC 2015! 
