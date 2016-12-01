@@ -55,7 +55,7 @@
               </div>
               <div class="profile_info">
                 <span>Selamat Datang,</span>
-                <h2>Bapak M. Irfak</h2>
+                <h2>Bapak Hadi</h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -99,7 +99,7 @@
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="../images/img.jpg" alt="">Bapak M. Irfak
+                    <img src="../images/img.jpg" alt="">Bapak Hadi
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -119,7 +119,7 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Mengelola Inventaris</h3>
+                <h3>Mengelola Keuangan</h3>
               </div>
 
               <div class="title_right">
@@ -140,7 +140,7 @@
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2><i class="fa fa-bars"></i> Data Inventaris</h2>
+                    <h2><i class="fa fa-bars"></i> Data Keuangan Masjid</h2>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
@@ -148,38 +148,49 @@
 
                     <div class="" role="tabpanel" data-example-id="togglable-tabs">
                       <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
-                        <li role="presentation" class="active"><a href="#tambahInventaris" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Tambah</a>
+                        <li role="presentation" class="active"><a href="#tambahDataKeuangan" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Tambah</a>
                         </li>
-                        <li role="presentation" class=""><a href="#editInventaris" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Edit</a>
+                        <li role="presentation" class=""><a href="#editDataKeuangan" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Edit</a>
                         </li>
-                        <li role="presentation" class=""><a href="#hapusInventaris" role="tab" id="profile-tab2" data-toggle="tab" aria-expanded="false">Delete</a>
+                        <li role="presentation" class=""><a href="#hapusDataKeuangan" role="tab" id="profile-tab2" data-toggle="tab" aria-expanded="false">Delete</a>
                         </li>
                       </ul>
                       <div id="myTabContent" class="tab-content">
-                        <div role="tabpanel" class="tab-pane fade active in" id="tambahInventaris" aria-labelledby="home-tab">
+                        <div role="tabpanel" class="tab-pane fade active in" id="tambahDataKeuangan" aria-labelledby="home-tab">
                           <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
                             <div class="form-group">
-                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Nama Inventaris <span class="required">*</span>
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Jenis<span class="required">*</span>
                               </label>
-                              <div class="col-md-6 col-sm-6 col-xs-12">
-                                <input type="text" id="first-name" required="required" class="form-control col-md-7 col-xs-12">
+                              <div class="col-md-8 col-sm-8 col-xs-8">
+                               <!--  <input type="text" id="first-name" required="required" class="form-control col-md-7 col-xs-12"> -->
+                              <select id="dateDonation">
+                                  <option value="">Pilih Pemasukan/Pengeluaran</option>
+                                  <option value="Pemasukan">Pemasukan</option>
+                                  <option value="Pengeluaran">Pengeluaran</option>
+                              </select>
                               </div>
                             </div>
                             <div class="form-group">
-                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Jumlah <span class="required">*</span>
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Tanggal <span class="required">*</span>
                               </label>
                               <div class="col-md-6 col-sm-6 col-xs-12">
                                 <input type="text" id="last-name" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
                               </div>
                             </div>
                             <div class="form-group">
-                              <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Kondisi </label>
+                              <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Pengeluaran</label>
                               <div class="col-md-6 col-sm-6 col-xs-12">
                                 <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="middle-name">
                               </div>
                             </div>
                             
-                            
+                            <div class="form-group">
+                              <label class="control-label col-md-3 col-sm-3 col-xs-12">Jumlah <span class="required">*</span>
+                              </label>
+                              <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="birthday" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text">
+                              </div>
+                            </div>
                             <div class="ln_solid"></div>
                             <div class="form-group">
                               <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
@@ -190,57 +201,143 @@
 
                           </form>
                         </div>
-                        <div role="tabpanel" class="tab-pane fade" id="editInventaris" aria-labelledby="profile-tab">
-                          <table id="datatableEdit" class="table table-striped table-bordered">
-                            <thead>
-                              <tr>
-                                <th>Nama Inventaris</th>
-                                <th>Jumlah</th>
-                                <th>Kondisi</th>
-                                <th>Aksi</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr id="data1">
-                                <td>Speaker</td>
-                                <td>1</td>
-                                <td>Baik</td>
-                                <td><a href="updateInventaris.html"><button class="btn btn-info btn-sm" type="">Edit</button></a></td>
-                              </tr>
-                              <tr id="data2">
-                                <td>Microphone</td>
-                                <td>3</td>
-                                <td>2 Baik, 1 Rusak</td>
-                                <td><a href="updateInventaris.html"><button class="btn btn-info btn-sm" type="">Edit</button></a></td>
-                              </tr>
-                            </tbody>
-                          </table>
+                        <div role="tabpanel" class="tab-pane fade" id="editDataKeuangan" aria-labelledby="profile-tab">
+                          <div>
+                            <h4>Pemasukkan</h4>
+                            <table id="datatableEditPemasukkan" class="table table-striped table-bordered">
+                              <thead>
+                                <tr>
+                                  <th>Tanggal</th>
+                                  <th>Keterangan</th>
+                                  <th>Jumlah</th>
+                                  <th>Aksi</th>
+                                </tr>
+                              </thead>
+
+
+                              <tbody>
+                                <tr id="pemasukkankeu0001">
+                                  <td>11 November 2016</td>
+                                  <td>Kotak Jumat</td>
+                                  <td>Rp. 3.492.000</td>
+                                  <td><a href="updateKeuangan.html"><button class="btn btn-info btn-sm" type="">Edit</button></a></td>
+                                </tr>
+                               <!--  <tr id="pemasukkankeu0002">
+                                  <td>Tiger Nixon</td>
+                                  <td>System Architect</td>
+                                  <td>Edinburgh</td>
+                                  <td>61</td>
+                                  <td>2011/04/25</td>
+                                  <td>$320,800</td>
+                                  <td><a href="updateKeuangan.html"><button class="btn btn-info btn-sm" type="">Edit</button></a></td>
+                                </tr> -->
+                                <tr>
+                                  <td colspan="2">Total</td>
+                                  <td colspan="2">Rp. 3.492.000</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <div>
+                            <h4>Pengeluaran</h4>
+                            <table id="datatableEditPengeluaran" class="table table-striped table-bordered">
+                              <thead>
+                                <tr>
+                                  <th>Tanggal</th>
+                                  <th>Keterangan</th>
+                                  <th>Jumlah</th>
+                                  <th>Aksi</th>
+                                </tr>
+                              </thead>
+
+
+                              <tbody>
+                                <tr id="pengeluarankeu0001">
+                                  <td>15 November 2016</td>
+                                  <td>Konsumsi Pengajian</td>
+                                  <td>Rp. 300.000</td>
+                                  <td><a href="updateKeuangan.html"><button class="btn btn-info btn-sm" type="">Edit</button></a></td>
+                                </tr>
+                                <tr id="pengeluarankeu0002">
+                                  <td>3 November 2016</td>
+                                  <td>Listrik</td>
+                                  <td>Rp. 120.000</td>
+                                  <td><a href="updateKeuangan.html"><button class="btn btn-info btn-sm" type="">Edit</button></a></td>
+                                </tr>
+                                <tr>
+                                  <td colspan="2">Total</td>
+                                  <td colspan="2">Rp. 420.000</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane fade" id="hapusInventaris" aria-labelledby="profile-tab">
-                          <table id="datatableDelete" class="table table-striped table-bordered">
-                            <thead>
-                              <tr>
-                                <th>Nama Inventaris</th>
-                                <th>Jumlah</th>
-                                <th>Kondisi</th>
-                                <th>Aksi</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr id="data1">
-                                <td>Speaker</td>
-                                <td>1</td>
-                                <td>Baik</td>
-                                <td><button class="delete-but btn btn-danger btn-sm" type="">Delete</button></td>
-                              </tr>
-                               <tr id="data2">
-                                <td>Microphone</td>
-                                <td>3</td>
-                                <td>2 Baik, 1 Rusak</td>
-                                <td><button class="delete-but btn btn-danger btn-sm" type="">Delete</button></td>
-                              </tr>
-                            </tbody>
-                          </table>
+                        <div role="tabpanel" class="tab-pane fade" id="hapusDataKeuangan" aria-labelledby="profile-tab">
+                          <div>
+                            <h4>Pemasukkan</h4>
+                            <table id="datatableDeletePemasukkan" class="table table-striped table-bordered">
+                              <thead>
+                                <tr>
+                                  <th>Tanggal</th>
+                                  <th>Keterangan</th>
+                                  <th>Jumlah</th>
+                                  <th>Aksi</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr id="pemasukkankeu0001">
+                                  <td>11 November 2016</td>
+                                  <td>Kotak Jumat</td>
+                                  <td>Rp. 3.492.000</td>
+                                  <td><button class="delete-but btn btn-danger btn-sm" type="">Delete</button></td>
+                                </tr>
+                                 <!-- <tr id="pemasukkankeu0002">
+                                  <td>Tiger Nixon</td>
+                                  <td>System Architect</td>
+                                  <td>Edinburgh</td>
+                                  <td>61</td>
+                                  <td>2011/04/25</td>
+                                  <td>$320,800</td>
+                                  <td><button class="delete-but btn btn-danger btn-sm" type="">Delete</button></td>
+                                </tr> -->
+                                <tr>
+                                  <td colspan="2">Total</td>
+                                  <td colspan="2">Rp. 3.492.000</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <div>
+                            <h4>Pengeluaran</h4>
+                            <table id="datatableDeletePengeluaran" class="table table-striped table-bordered">
+                              <thead>
+                                <tr>
+                                  <th>Tanggal</th>
+                                  <th>Keterangan</th>
+                                  <th>Jumlah</th>
+                                  <th>Aksi</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr id="pengeluarankeu0001">
+                                  <td>15 November 2016</td>
+                                  <td>Konsumsi Pengajian</td>
+                                  <td>Rp. 300.000</td>
+                                  <td><button class="delete-but btn btn-danger btn-sm" type="">Delete</button></td>
+                                </tr>
+                                 <tr id="pengeluarankeu0002">
+                                  <td>3 November 2016</td>
+                                  <td>Listrik</td>
+                                  <td>Rp. 120.000</td>
+                                  <td><button class="delete-but btn btn-danger btn-sm" type="">Delete</button></td>
+                                </tr>
+                                <tr>
+                                  <td colspan="2">Total</td>
+                                  <td colspan="2">Rp. 420.000</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -344,20 +441,25 @@
     <script>
       $(document).ready(function() {
         
-        $('#datatableEdit').dataTable();
-        $('#datatableDelete').dataTable();
-        $('#sidebar-menu').load('sidebar-sekretaris.html');
+        $('#datatableEditPemasukkan').DataTable();
+        $('#datatableEditPengeluaran').DataTable();
+        $('#datatableDeletePemasukkan').DataTable();
+        $('#datatableDeletePengeluaran').DataTable();
+        $('#sidebar-menu').load('sidebar-bendahara.html');
       });
     </script>
     <script>
       $(document).on('click', '.delete-but', function(e){
         e.preventDefault();
-        var tableDelete = $('#datatableDelete').DataTable();
-        var tableEdit= $('#datatableEdit').DataTable();
-        var id = $(this).closest("tr").attr('id');
-        console.log(id);
-            
-         swal({
+        var tableEditPemasukkan = $('#datatableEditPemasukkan').DataTable();
+        var tableEditPengeluaran =  $('#datatableEditPengeluaran').DataTable();
+        var tableDeletePemasukkan = $('#datatableDeletePemasukkan').DataTable();
+        var tableDeletePengeluaran = $('#datatableDeletePengeluaran').DataTable();
+        var idTr = $(this).closest("tr").attr('id');
+        
+        var flagType = idTr.indexOf('pemasukkan');
+        
+        swal({
           title: "Apa anda yakin?",
           text: "Data yang terhapus tidak bisa dikembalikan",
           type: "warning",
@@ -367,8 +469,21 @@
           closeOnConfirm: false }, 
           function(){   
             swal("Terhapus!", "Data sudah terhapus", "success");
-            tableDelete.row($(this).closest("tr").get(0)).remove().draw( false );
-            tableEdit.row('#'+id).remove().draw( false );
+            
+            if(flagType>=0) 
+            {
+                tableEditPemasukkan.row('#'+idTr).remove().draw( false );
+                tableDeletePemasukkan.row('#'+idTr).remove().draw( false );
+                var id = idTr.split('pemasukkan')[1];
+            }
+            else
+            {
+                tableEditPengeluaran.row('#'+idTr).remove().draw( false );
+                tableDeletePengeluaran.row('#'+idTr).remove().draw( false );
+                var id = idTr.split('pengeluaran')[1];
+            }
+
+
 
           });
       });
