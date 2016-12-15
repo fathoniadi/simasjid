@@ -124,12 +124,12 @@
 
               <div class="title_right">
                 <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                  <div class="input-group">
+                  <!-- <div class="input-group">
                     <input type="text" class="form-control" placeholder="Search for...">
                     <span class="input-group-btn">
                       <button class="btn btn-default" type="button">Go!</button>
                     </span>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>
@@ -164,7 +164,7 @@
                               <div class="col-md-6 col-sm-6 col-xs-12">
                                 
                                 <select class="form-control
-                                 col-md-7 col-xs-12" name="jabatanPengurus"><option value="Sekeretaris">Sekretaris</option>
+                                 col-md-7 col-xs-12" name="jabatanPengurus"><option value="Sekertaris">Sekertaris</option>
                                  <option value="Ketua">Ketua</option>
                                  <option value="Bendahara">Bendahara</option>
                                 </select>
@@ -225,14 +225,14 @@
                                 <td>M. Naim</td>
                                 <td>089738271638</td>
                                 <td>Jalan Keputih Gg. II/15 </td>
-                                <td><a href="updatePengurusMasjid.html"><button class="btn btn-info btn-sm" type="">Edit</button></a></td>
+                                <td><a href="updatePengurusMasjid.html"><button class="edit-but btn btn-info btn-sm" type="">Edit</button></a></td>
                               </tr>
                               <tr id="data2">
-                                <td>Sekretaris</td>
+                                <td>Sekertaris</td>
                                 <td>M. Irfak</td>
                                 <td>081237182937</td>
                                 <td>Jalan Keputih Gg. I/10A</td>
-                                <td><a href="updatePengurusMasjid.html"><button class="btn btn-info btn-sm" type="">Edit</button></a></td>
+                                 <td><a href="updatePengurusMasjid.html"><button class="edit-but btn btn-info btn-sm" type="">Edit</button></a></td>
                               </tr>
                            </tbody>
                           </table>
@@ -257,7 +257,7 @@
                                 <td><button class="delete-but btn btn-danger btn-sm" type="">Delete</button></td>
                               </tr>
                                <tr id="data2">
-                                <td>Sekretaris</td>
+                                <td>Sekertaris</td>
                                 <td>M. Irfak</td>
                                 <td>081237182937</td>
                                 <td>Jalan Keputih Gg. I/10A</td>
@@ -361,6 +361,19 @@
             return false;
           }
         });*/
+
+      });
+
+      $(document).on('click', '.edit-but', function(e){
+
+          var tableEdit= $('#datatableEdit').DataTable();
+          var editId = $(this).closest("tr").attr('id');
+          var rowData = tableEdit.rows("#"+editId).data();
+         console.log(rowData);
+
+         for (var i = 0; i < tableEdit.rows().data().length; i++) { 
+              console.log( tableEdit.rows().data()[i]);
+            }
 
       });
     </script>

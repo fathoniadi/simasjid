@@ -24,6 +24,7 @@ class Auth extends CI_Controller {
 		$this->load->library('session');
 		$this->load->helper('url');
 		$this->load->library('form_validation');
+		$this->load->model('AuthModel');
 	}
 
 	public function index()
@@ -72,13 +73,26 @@ class Auth extends CI_Controller {
 			}
 			else
 			{
-				$userData = array('idPengurus' => 'ID00001',
-								  'namaPengurus' => 'Fathoni Adi K',
-								  'role' => 'Ketua'
-								);
+				$userDatas = $this->AuthModel->login($this->input->post('idPengurus'), hash('sha256', $this->input->post('passwordPengurus')));
+				if($userDatas==NULL)
+				{
+					$this->session->meslog = "Id atau password salah.";
+					redirect('auth//login');
+				}
+				else
+				{
+					
+					$userData = $arrayName = array('idPengurus' => $this->input->post('idPengurus') ,
+					 								'namaPengurus' => $userDatas->nama_pengurus,
+					 								'role' => $userDatas->jabatan
+					 								);
+					
+					//var_dump($userData);
+				
 
-				$this->session->Uu = $userData;
-				echo "Sukses";
+					$this->session->Uu = $userData;
+					Redirect('dashboard');
+				}
 			}
 		}
 		else Redirect('auth/login');

@@ -18,8 +18,24 @@ class Dashboard extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->library('session');
+		if(!$this->session->Uu)
+		{
+			$this->session->meslog="Silahkan login terlebih dahulu";
+			Redirect('auth/login');
+		} 
+	}
+
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		$data['header'] = $this->load->view('layout/head','',true);
+		$data['navbar'] = $this->load->view('layout/navbar-dashboard','',true);
+		$data['sidebar'] = $this->load->view('layout/sidebar','',true);
+		$data['footer'] = $this->load->view('layout/footer-dashboard','',true);
+		$this->load->view('dashboard/dashboard',$data);
 	}
 }
