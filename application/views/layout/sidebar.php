@@ -16,7 +16,7 @@
 	<h3>Ketua</h3>
 	<ul class="nav side-menu">
 	  <li><a href="<?php echo base_url();?>ControllerPengurusMasjid"><i class="fa fa-sitemap"></i> Pengurus Masjid</a></li>
-	  <li><a href="mengelolaImam.html"><i class="fa fa-user"></i> Data Imam</a></li>
+	  <li><a href="<?php echo base_url();?>ControllerImam"><i class="fa fa-user"></i> Data Imam</a></li>
 	  <li><a href="donaturTakjil.html"><i class="fa fa-cutlery"></i> Donatur Takjil</a></li>
 	  <li><a href="laporanRekapKeuangan.html" ><i class="fa fa-money"></i> Rekap Keuangan</a></li>
 	  <li><a href="laporanInventaris.html"><i class="fa fa-wrench"></i> Inventaris</a></li>
